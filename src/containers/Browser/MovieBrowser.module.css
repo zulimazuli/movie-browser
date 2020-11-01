@@ -1,0 +1,49 @@
+.Header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Header h1 {
+  font-size: 4em;
+  margin: 10px;
+}
+
+.Header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Header li {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.Header li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Header li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.Header li a.Active {
+  color: #f08000;
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .Header h1 {
+    font-size: 2em;
+  }
+
+  .Header li {
+    display: block;
+  }
+  .Header li:nth-child(2) {
+      display: none;
+  }
+}

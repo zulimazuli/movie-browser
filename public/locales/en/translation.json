@@ -1,0 +1,11 @@
+{
+    "title": "Movie Browser",
+    "backToBrowser": "Back to Browser",
+    "lists": {
+        "trending": "Trending this week",
+        "discover": "Discover this year"
+    },
+    "nextPage": "Next",
+    "previousPage": "Previous",
+    "minutes": "minutes"
+}

@@ -1,0 +1,34 @@
+.LanguageSwitcher {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.LanguageSwitcher a:hover {
+    text-decoration: none;    
+}
+
+.LanguageSwitcher div {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.LanguageSwitcher div:hover,
+.LanguageSwitcher div:active {
+    color: #f08000;
+    border-color: #f08000;
+}
+
+@media (max-width: 500px) {
+    .LanguageSwitcher {
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+    }
+}

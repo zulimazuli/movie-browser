@@ -1,0 +1,66 @@
+.Card {
+    height: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Title {
+    font-size: 1em;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;    
+}
+
+.Release {
+    font-size: 0.8em;
+}
+
+.Genres {
+    font-size: 0.8em;
+    color: grey;
+}
+
+.Score {
+    bottom: 0;
+    font-size: 1em;
+}
+
+.StarIcon {
+    color: #ffc200;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-variant: normal;
+}
+
+.StarIcon:before {
+    content: "\2605";    
+}
+
+@media(max-width: 500px) {
+    
+    .Card {
+        height: 100%;
+        padding: 1rem 1rem;
+    }
+
+    .Title {
+        white-space: normal;
+    }
+
+    .Score {
+        bottom: 0;
+        font-size: 1.2em;
+    }
+    
+    .StarIcon {
+        color: #ffc200;
+        font-size: 1.2em;
+        font-style: normal;
+        font-variant: normal;
+    }
+}

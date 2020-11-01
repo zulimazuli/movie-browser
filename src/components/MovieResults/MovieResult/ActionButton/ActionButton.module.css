@@ -1,0 +1,32 @@
+.Button {
+    height: 50px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid #e8e8e8;
+    border-radius: .125rem;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Button:hover,
+.Button:active {
+    background-color: #ffc200;
+    border: 1px solid #e8e8e8;
+}
+
+
+.Add, .Remove {
+    font-size: 1.5em;
+}
+
+.Add:after {
+    content: "+";
+}
+
+.Remove:after {
+    content: "-";
+}

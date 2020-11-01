@@ -1,0 +1,11 @@
+{
+    "title": "Przeglądarka Filmowa",
+    "backToBrowser": "Cofnij do listy",
+    "lists": {
+        "trending": "Trendy w tym tygodniu",
+        "discover": "Odkryj w tym roku"
+    },
+    "nextPage": "Następna strona",
+    "previousPage": "Poprzednia strona",
+    "minutes": "minut"
+}

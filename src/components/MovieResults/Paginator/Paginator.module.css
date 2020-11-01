@@ -1,0 +1,16 @@
+.Paginator {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.Paginator button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.Paginator button:hover {
+  text-decoration: underline;
+  color: #f08000;
+}
