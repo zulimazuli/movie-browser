@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import tmdb from '../../axios-tmdb';
-import { Link } from 'react-router-dom';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 import styles from './Movie.module.css';
@@ -29,6 +28,14 @@ class Movie extends Component {
             .catch(err => this.setState({id: this.props.match.params.id, loading: false, error: true}))
     }
 
+    goBackHandler = () => {
+        if(this.props.history) {
+            this.props.history.goBack();
+        } else {
+            this.props.history.push('/');
+        }
+    }
+
     render() {
         const { t } = this.props;
         let movie = null;
@@ -36,8 +43,7 @@ class Movie extends Component {
             const backdropPosterPath = 'http://image.tmdb.org/t/p/w1280/' + this.state.movie.backdrop_path;
             const gradientBackground = 'linear-gradient(90deg, rgba(51,51,51,1) 20%, rgba(30,30,30,0.8) 100%)';
             const poster = <img src={'http://image.tmdb.org/t/p/w300_and_h450_bestv2' + this.state.movie.poster_path} alt="" />
-            
-            const navigation = <div className={styles.Navigation}><Link to="/">{t('backToBrowser')}</Link></div>;
+            const navigation = <div className={styles.Navigation}><button onClick={this.goBackHandler}>{t('backToBrowser')}</button></div>;
 
             movie = (
                 <React.Fragment>

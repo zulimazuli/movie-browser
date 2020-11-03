@@ -7,5 +7,6 @@
     },
     "nextPage": "Następna strona",
     "previousPage": "Poprzednia strona",
-    "minutes": "minut"
+    "minutes": "minut",
+    "searchPlaceholder": "...lub poszukaj innego tytułu"
 }

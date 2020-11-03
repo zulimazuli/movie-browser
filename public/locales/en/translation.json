@@ -7,5 +7,6 @@
     },
     "nextPage": "Next",
     "previousPage": "Previous",
-    "minutes": "minutes"
+    "minutes": "minutes",
+    "searchPlaceholder": "...or search for a movie title"
 }

@@ -1,8 +1,9 @@
 import React, { lazy } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './MovieBrowser.module.css';
 import BrowserNavigation from '../../components/BrowserNavigation/BrowserNavigation';
+import SearchBox from '../../components/MovieResults/SearchBox/SearchBox';
 
 const MovieList = lazy(() => import('../../components/MovieResults/MovieList'))
 
@@ -19,13 +20,14 @@ const MovieBrowser = (props) => {
     return (
         <React.Fragment>
             <div className={styles.Header}>
-                <h1>{t('title')}</h1>
+                <h1><Link className={styles.Title} to="/">{t('title')}</Link></h1>
                 <BrowserNavigation />
-            </div>
-
+                <SearchBox />
+            </div>            
             <Switch>
                 <Route path={'/' + TRENDING_MOVIES} render={(props) => renderContent(TRENDING_MOVIES, props)} />       
                 <Route path={'/' + DISCOVER_MOVIES} render={(props) => renderContent(DISCOVER_MOVIES, props)} />
+                <Route path="/search" component={MovieList} /> 
                 <Redirect from="/" to={'/' + TRENDING_MOVIES} />
             </Switch>
                 

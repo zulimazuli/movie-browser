@@ -7,6 +7,7 @@ import Paginator from './Paginator/Paginator';
 
 class MovieList extends Component {
   state = {
+    searchedQuery: null,
     movies: null,
     genres: null,
     apiSearchTypes: [
@@ -21,21 +22,64 @@ class MovieList extends Component {
   };
 
   componentDidMount() {
-    this.loadData();
+    console.log('[MovieList] did mount')
+
+    if(this.props.match.path.includes('search'))
+    {
+      console.log('[MovieList] this is search')
+      this.searchTitle();
+    } else {
+
+      this.loadData();
+    }
     this.loadGenres();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(prevProps.type !== this.props.type || prevState.currentPage !== this.state.currentPage) {
+    console.log('[MovieList] did update')
+    const query = new URLSearchParams(this.props.location.search).get('q');
+    if(prevProps !== this.props || prevState.currentPage !== this.state.currentPage) {
+      console.log('[MovieList] update: props changed', this.props)
+      if(query) {
+        console.log('[MovieList] there is query', query)
+
+        this.searchTitle();
+
+      } else {
+
         this.loadData();
+      }
     }
   } 
+  
+  searchTitle = () => {
+    const query = new URLSearchParams(this.props.location.search).get('q');
+
+    if(query && this.state.searchedQuery !== this.props.searchedQuery) {
+        
+      this.setState({searchedQuery: query, loading: true});
+
+      tmdb.get('/search/movie?query=' + query) // todo: paging - { params: { page: this.state.currentPage}
+        .then(res => {
+          this.setState({ 
+            movies: res.data.results, 
+            currentPage: res.data.page, 
+            totalPages: res.data.total_pages });
+
+          const cache = [...this.state.apiSearchCache];
+          cache.push({name: query, content: res.data.results});
+          this.setState({apiSearchCache: cache, loading: false});
+        });
+    }
+  }
 
   loadData = () => {
-    this.setState({loading: true});
-
     const currentApi = this.props.type;
+    if(!currentApi) {
+      return;
+    }
 
+    this.setState({loading: true});
     const apiUrl = this.state.apiSearchTypes.find(el => el.name === currentApi).url;
 
     if(this.state.cacheEnabled && this.state.apiSearchCache.findIndex(el => el.name === currentApi) > -1) {
