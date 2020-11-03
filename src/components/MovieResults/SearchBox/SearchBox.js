@@ -44,7 +44,7 @@ const SearchBox = (props) => {
         changed={(event) => inputChangedHandler(event)}
         value={query}
       />
-      <div className={styles.Submit}><img src={searchIcon} alt="search" /></div>
+      <div className={styles.Submit} onClick={searchSubmitHandler}><img src={searchIcon} alt="search" /></div>
     </div>
   );
 };
