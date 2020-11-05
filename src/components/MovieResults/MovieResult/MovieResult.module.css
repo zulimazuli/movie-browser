@@ -1,7 +1,7 @@
 .MovieResult {
     width: 220px;
-    height: 450px;
-    border: 1px solid #777;
+    height: 425px;
+    border: 1px solid #434343;
     border-radius: 5px;
     display: flex;
     flex-direction: column;

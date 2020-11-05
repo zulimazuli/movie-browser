@@ -1,0 +1,44 @@
+.Header {
+  border-bottom: 1px solid #373737;
+}
+
+.Wrapper {
+  height: 60px;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between
+}
+
+.MenuToggle {
+  display: none;
+}
+
+.Logo {
+  line-height: 60px;
+}
+
+.Logo a {
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .Header {
+    /* display: none; */
+  }
+
+  .MenuToggle {
+    display: block;
+  }
+
+  .Wrapper {
+    text-align: center;
+    display: block;
+    height: 120px;
+  }
+
+  .Logo {
+    font-size: 0.8em;
+  }
+
+}

@@ -4,6 +4,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 
 import styles from './Movie.module.css';
 import { withTranslation } from 'react-i18next';
+import Providers from '../../components/Movie/Providers/Providers';
 
 class Movie extends Component {
     state ={
@@ -71,6 +72,9 @@ class Movie extends Component {
                                 <span className={styles.Badge}>{this.state.movie.vote_average.toFixed(1)}<small>/10</small></span>
                             </div>
                         </div>                    
+                        <div className={styles.Providers}>
+                            <Providers title={this.state.movie.original_title} />
+                        </div>
                     </div>
                 </div>
             </React.Fragment>

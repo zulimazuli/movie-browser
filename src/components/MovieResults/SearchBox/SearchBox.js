@@ -24,10 +24,12 @@ const SearchBox = (props) => {
   useEffect(setTheQueryFromSearch, []);
 
   const searchSubmitHandler = () => {
-    history.push({
-      pathname: '/search',
-      search: '?q=' + query,
-    });
+    if(query) {
+      history.push({
+        pathname: '/search',
+        search: '?q=' + query,
+      });
+    }
   };
 
   const inputChangedHandler = (event) => {

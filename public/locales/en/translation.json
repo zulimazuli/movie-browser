@@ -7,6 +7,7 @@
     },
     "nextPage": "Next",
     "previousPage": "Previous",
+    "availableOn": "Available on:",
     "minutes": "minutes",
-    "searchPlaceholder": "...or search for a movie title"
+    "searchPlaceholder": "Search for movies"
 }

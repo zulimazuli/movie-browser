@@ -1,10 +1,10 @@
-.Header {
+.BrowserNavigation {
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.Header h1 {
+.BrowserNavigation h1 {
   font-size: 4em;
   margin: 10px;
 }
@@ -13,47 +13,42 @@
   text-decoration: none;  
 }
 
-.Header ul {
+.BrowserNavigation ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.Header li {
+.BrowserNavigation li {
   display: inline-block;
   margin: 10px 20px;
 }
 
-.Header li a {
+.BrowserNavigation li a {
   color: #fff;
   text-decoration: none;
 }
 
-.Header li a:hover {
+.BrowserNavigation li a:hover {
   color: #fff;
   text-decoration: underline;
 }
 
-.Header li a.Active {
+.BrowserNavigation li a.Active {
   color: #f08000;
   text-decoration: underline;
 }
 
 @media (max-width: 500px) {
-  .Header h1 {
+  .BrowserNavigation h1 {
     font-size: 2em;
   }
 
-  .Header li {
+  .BrowserNavigation li {
     display: block;
   }
 
-  .Header li:nth-child(2) {
+  .BrowserNavigation li:nth-child(2) {
       display: none;
-  }
-
-  .Search {
-    width: 90%;
-    margin: 0 auto;
   }
 }

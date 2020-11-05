@@ -1,0 +1,12 @@
+.Providers {
+    padding: 10px 20px;
+    /* margin: 10px auto; */
+}
+.Providers img {
+    height: 60px;
+    border-radius: 10px;
+}
+
+.Text {
+    margin-bottom: 10px;
+}

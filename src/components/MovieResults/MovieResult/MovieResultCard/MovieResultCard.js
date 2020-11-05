@@ -20,13 +20,14 @@ const releaseDate = new Date(props.movie.release_date);
 
 return (
   <div className={styles.Card}>
+   
     <div>
       <div className={styles.Title} title={props.movie.original_title}>{props.movie.original_title}</div>
       <div className={styles.Release}>{releaseDate.getFullYear()}</div>
       <div className={styles.Genres}>{movieGenres}</div>
     </div>
     <div>
-      <div className={styles.Score}>
+    <div className={styles.Score}>
         <i className={styles.StarIcon}></i>
         {props.movie.vote_average.toFixed(1)}
       </div>

@@ -1,18 +1,30 @@
 .Search {
-  width: 350px;
-  margin: 0 auto;
+  width: 300px;
+  padding: 5px 20px;
+  box-sizing: border-box;
   display: flex;
 }
 
 .Search input {
   text-align: center;
+  background-color: #373737;
+  border-color: #434343;
+  color: #fff;
   width: 100%;
+  border-radius: 4px 0 0 4px;
   z-index: 10;
 }
 
+/* .Search input::-webkit-input-placeholder,
+.Search input::placeholder,
+.Search input:-ms-input-placeholder,
+.Search input::-ms-input-placeholder { 
+  color: red;
+} */
+
 .Submit {
-  width: 50px;
-  padding: 12px;
+  width: 40px;
+  padding: 8px;
   margin: 8px 0;
   display: inline-block;
   background-color: #ccc;
@@ -33,13 +45,12 @@
   display: block;
 }
 
-.Search input {
-  border-radius: 4px 0 0 4px;
-}
+
 
 @media (max-width: 500px) {
   .Search {
     width: 90%;
     margin: 0 auto;
+    padding: 0;
   }
 }

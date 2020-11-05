@@ -23,3 +23,9 @@
   color: #f08000;
   text-decoration: underline;
 }
+
+@media (max-width: 500px) {
+  .Navigation li {
+    margin: 10px 10px;
+  }
+}
