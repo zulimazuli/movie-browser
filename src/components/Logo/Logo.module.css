@@ -1,0 +1,12 @@
+.Logo {
+    text-align: center;
+}
+.Logo a {
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .Logo {
+    font-size: 0.8em;
+  }
+}

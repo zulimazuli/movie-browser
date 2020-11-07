@@ -22,7 +22,7 @@ return (
   <div className={styles.Card}>
    
     <div>
-      <div className={styles.Title} title={props.movie.original_title}>{props.movie.original_title}</div>
+      <div className={styles.Title} title={props.movie.title}>{props.movie.title}</div>
       <div className={styles.Release}>{releaseDate.getFullYear()}</div>
       <div className={styles.Genres}>{movieGenres}</div>
     </div>

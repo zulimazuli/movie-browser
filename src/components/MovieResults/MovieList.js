@@ -113,8 +113,15 @@ class MovieList extends Component {
     }
   }
 
-  movieClickedHandler = (movieId) => {
-    this.props.history.push("/movie/" + movieId);
+  movieClickedHandler = (movieId, movieName) => {
+    const normalizedName = movieName
+      .replace(/[^a-zA-Z \p{L}]/g, '')
+      // .replace(/\s+/g, '-')
+      .replace(/\W/g, '-')
+      .substring(0, 50)
+      .toLowerCase();
+      
+    this.props.history.push('/movie/' + movieId + '/' + normalizedName);
   }
 
   nextPageHandler = () =>
@@ -137,7 +144,7 @@ class MovieList extends Component {
 
     if (this.state.movies && this.state.genres) {
       movies = this.state.movies.map((movie) => {
-        return <div className={styles.Wrapper} key={movie.id} onClick={() => this.movieClickedHandler(movie.id)}>
+        return <div className={styles.Wrapper} key={movie.id} onClick={() => this.movieClickedHandler(movie.id, movie.title)}>
             <MovieResult movie={movie} genres={this.state.genres} />
           </div>;
       });

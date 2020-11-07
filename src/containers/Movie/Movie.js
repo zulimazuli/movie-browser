@@ -5,6 +5,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import styles from './Movie.module.css';
 import { withTranslation } from 'react-i18next';
 import Providers from '../../components/Movie/Providers/Providers';
+import Videos from '../../components/Movie/Videos/Videos';
 
 class Movie extends Component {
     state ={
@@ -17,14 +18,14 @@ class Movie extends Component {
 
     componentDidMount () {
         const movieId = this.props.match.params.id;
-        tmdb.get('/movie/' + movieId)
+        tmdb.get('/movie/' + movieId + '?append_to_response=videos')
             .then(res => {
                 this.setState({
                     id: this.props.match.params.id,
                     movie: res.data, 
                     loading: false
                 });
-                console.log(res.data)
+                console.log('[Movie Data]', res.data)
             })
             .catch(err => this.setState({id: this.props.match.params.id, loading: false, error: true}))
     }
@@ -76,7 +77,12 @@ class Movie extends Component {
                             <Providers title={this.state.movie.original_title} />
                         </div>
                     </div>
+
                 </div>
+                    <div className={styles.Videos}>
+                        <Videos videos={this.state.movie.videos.results} />
+                    </div>
+
             </React.Fragment>
             );
         }

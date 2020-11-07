@@ -3,42 +3,36 @@
 }
 
 .Wrapper {
-  height: 60px;
   max-width: 1060px;
   margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.MenuToggle {
-  display: none;
-}
-
-.Logo {
-  line-height: 60px;
-}
-
-.Logo a {
-  text-decoration: none;
+.Navigation {
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 500px) {
   .Header {
-    /* display: none; */
-  }
-
-  .MenuToggle {
-    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1d1d1d;
+    z-index: 50;
   }
 
   .Wrapper {
     text-align: center;
-    display: block;
-    height: 120px;
+    justify-content: space-around;
   }
 
-  .Logo {
-    font-size: 0.8em;
+  .Navigation {
+    display: none;
   }
-
 }

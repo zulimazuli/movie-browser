@@ -1,0 +1,11 @@
+.Video {
+  padding: 15px 5px;
+  max-width: 300px;
+}
+
+.Name {
+    white-space: nowrap; 
+    width: 300px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

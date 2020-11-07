@@ -29,6 +29,9 @@ const SearchBox = (props) => {
         pathname: '/search',
         search: '?q=' + query,
       });
+      if(props.callback) {
+        props.callback();
+      }
     }
   };
 

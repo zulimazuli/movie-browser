@@ -1,26 +1,28 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import SearchBox from '../MovieResults/SearchBox/SearchBox';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 import styles from './Header.module.css';
+import DrawerToggle from '../Navigation/SideDrawer/DrawerToggle/DrawerToggle';
+import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Logo from '../Logo/Logo';
 
-const Header = () => {
-    const { t } = useTranslation();
+const Header = (props) => {
+    const [showSideDrawer, SetShowSideDrawer] = useState(false);
 
     return(
         <div className={styles.Header}>
             <div className={styles.Wrapper}>
-                <div className={styles.MenuToggle}>
-                {/* TODO Hamburger Menu */}
+                <Logo />
+                <DrawerToggle clicked={() => SetShowSideDrawer(!showSideDrawer)} opened={showSideDrawer}/>
+                <div className={styles.Navigation}>
+                    <LanguageSwitcher />
+                    <SearchBox />
                 </div>
-                <div className={styles.Logo}>
-                    <h1><Link className={styles.Title} to="/">{t('title')}</Link></h1>
-                </div>
-                <SearchBox />
-                {/* <LanguageSwitcher /> */}
+
             </div>
+            <SideDrawer show={showSideDrawer} close={() => SetShowSideDrawer(false)} />
+
         </div>
     );
 }
