@@ -13,5 +13,5 @@
 
 .Paginator button:hover {
   text-decoration: underline;
-  color: #f08000;
+  color: var(--primary-color);
 }

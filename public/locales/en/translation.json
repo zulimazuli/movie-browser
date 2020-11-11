@@ -5,6 +5,7 @@
         "trending": "Trending this week",
         "discover": "Discover this year"
     },
+    "NoStreamProvider": "No streaming platform found.",
     "nextPage": "Next",
     "previousPage": "Previous",
     "availableOn": "Available on:",

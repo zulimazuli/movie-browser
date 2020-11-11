@@ -35,7 +35,7 @@
 }
 
 .BrowserNavigation li a.Active {
-  color: #f08000;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 

@@ -9,5 +9,5 @@
 
 .Input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f08000;
+  box-shadow: 0 0 0 2px var(--primary-color);
 }

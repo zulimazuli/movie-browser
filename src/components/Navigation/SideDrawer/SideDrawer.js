@@ -1,6 +1,6 @@
 import React from 'react';
 import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
-import SearchBox from '../../MovieResults/SearchBox/SearchBox';
+import SearchBox from '../../MovieList/SearchBox/SearchBox';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import styles from './SideDrawer.module.css';
 

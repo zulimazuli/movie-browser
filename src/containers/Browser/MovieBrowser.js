@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import styles from './MovieBrowser.module.css';
 import BrowserNavigation from '../../components/BrowserNavigation/BrowserNavigation';
 
-const MovieList = lazy(() => import('../../components/MovieResults/MovieList'))
+const MovieList = lazy(() => import('../../components/MovieList/MovieList'))
 
 const TRENDING_MOVIES = 'trending';
 const DISCOVER_MOVIES = 'discover';

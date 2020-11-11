@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchBox from '../MovieResults/SearchBox/SearchBox';
+import SearchBox from '../MovieList/SearchBox/SearchBox';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 import styles from './Header.module.css';

@@ -5,6 +5,7 @@
         "trending": "Trendy w tym tygodniu",
         "discover": "Odkryj w tym roku"
     },
+    "NoStreamProvider": "Nie znaleziono żadnej platformy do streamingu wideo.",
     "nextPage": "Następna strona",
     "previousPage": "Poprzednia strona",
     "availableOn": "Dostępne na:",

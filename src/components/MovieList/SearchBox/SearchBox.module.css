@@ -36,7 +36,7 @@
 
 .Submit:hover,
 .Submit:active {
-  background-color: #f08000;
+  background-color: var(--primary-color);
 }
 
 .Submit img {

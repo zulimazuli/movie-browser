@@ -1,27 +1,22 @@
 .LanguageSwitcher {
-
     padding: 5px;
     box-sizing: border-box;
+    display: flex;
 }
 
 .LanguageSwitcher a:hover {
     text-decoration: none;    
 }
 
-.LanguageSwitcher div {
-    display: inline-block;
-    width: 25px;
+.LangIcon {
     height: 25px;
-    margin: 2px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 50%;
+    opacity: 0.7;
+    display: block;
 }
 
-.LanguageSwitcher div:hover,
-.LanguageSwitcher div:active {
-    color: #f08000;
-    border-color: #f08000;
+.LangIcon:hover,
+.LangIcon:active {
+    opacity: 1;
 }
 
 @media (max-width: 500px) {
@@ -29,5 +24,9 @@
         position: relative;
         margin: 0 auto;
         text-align: center;
+    }
+
+    .LangIcon {
+        opacity: 1;
     }
 }

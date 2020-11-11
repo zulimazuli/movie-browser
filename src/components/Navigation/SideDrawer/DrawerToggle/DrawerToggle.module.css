@@ -17,7 +17,7 @@
 }
 
 .Active div {
-  background-color: #f08000;
+  background-color: var(--primary-color);
 }
 
 @media (min-width: 500px) {

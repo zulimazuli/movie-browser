@@ -81,10 +81,10 @@ const Providers = (props) => {
     return res;
   }, []);
 
-  let output = null;
+let output = <span>{t('NoStreamProvider')}</span>;
   if(validProviders.length > 0) {
     output = (
-      <div className={styles.Providers}>     
+      <React.Fragment>     
         <div className={styles.Text}>{t('availableOn')}</div>
         <div>
           {validProviders.map(item => 
@@ -95,11 +95,15 @@ const Providers = (props) => {
             alt={item.name}
           />)}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 
-  return (output);
+  return (
+  <div className={styles.Providers}>
+    {output}
+  </div>
+  );
 };
 
 export default Providers;
