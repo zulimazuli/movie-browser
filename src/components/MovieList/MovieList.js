@@ -4,6 +4,7 @@ import MovieResult from './MovieResult/MovieResult';
 import styles from './MovieList.module.css';
 import Spinner from '../UI/Spinner/Spinner';
 import Paginator from './Paginator/Paginator';
+import { withRouter } from 'react-router';
 
 class MovieList extends Component {
   state = {
@@ -37,8 +38,10 @@ class MovieList extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log('[MovieList] did update')
-    const query = new URLSearchParams(this.props.location.search).get('q');
-    if(prevProps !== this.props || prevState.currentPage !== this.state.currentPage) {
+    const params = new URLSearchParams(this.props.location.search);
+    const query = params.get('q');
+
+    if (prevProps !== this.props || prevState.currentPage !== this.state.currentPage) {
       console.log('[MovieList] update: props changed', this.props)
       if(query) {
         console.log('[MovieList] there is query', query)
@@ -89,8 +92,8 @@ class MovieList extends Component {
 
     } else {
       console.log('list from API');
-      this.setState({loading: true});      
-      tmdb.get(apiUrl, { params: { page: this.state.currentPage}})
+      this.setState({ loading: true });
+      tmdb.get(apiUrl, { params: { page: this.state.currentPage }})
         .then((res) => {
           this.setState({ 
             movies: res.data.results, 
@@ -115,7 +118,8 @@ class MovieList extends Component {
 
   movieClickedHandler = (movieId, movieName) => {
     const normalizedName = movieName
-      .replace(/[^a-zA-Z \p{L}]/g, '')
+      .replace('&', 'and')
+      .replace(/[^a-zA-Z0-9 \p{L}]/g, '')
       // .replace(/\s+/g, '-')
       .replace(/\W/g, '-')
       .substring(0, 50)
@@ -166,4 +170,4 @@ class MovieList extends Component {
   }
 }
 
-export default MovieList;
+export default withRouter(MovieList);

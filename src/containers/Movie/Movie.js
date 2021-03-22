@@ -42,9 +42,10 @@ class Movie extends Component {
         const { t } = this.props;
         let movie = null;
         if (this.state.movie) {
-            const backdropPosterPath = 'http://image.tmdb.org/t/p/w1280/' + this.state.movie.backdrop_path;
+            const backdropPosterPath = this.state.movie.backdrop_path ? 'http://image.tmdb.org/t/p/w1280/' + this.state.movie.backdrop_path : null;
             const gradientBackground = 'linear-gradient(90deg, rgba(51,51,51,1) 20%, rgba(30,30,30,0.8) 100%)';
-            const poster = <img src={'http://image.tmdb.org/t/p/w300_and_h450_bestv2' + this.state.movie.poster_path} alt="" />
+            const posterPath = this.state.movie.poster_path ? 'http://image.tmdb.org/t/p/w300_and_h450_bestv2' + this.state.movie.poster_path : 'https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress';
+            const poster = <img src={posterPath} alt="" />
             const navigation = <div className={styles.Navigation}><button onClick={this.goBackHandler}>{t('backToBrowser')}</button></div>;
 
             movie = (
