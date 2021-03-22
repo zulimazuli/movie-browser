@@ -23,6 +23,7 @@ const jwproviders = [
   { id: 280, name: 'HBO GO', img: '127424441' },
   { id: 27, name: 'HBO Now', img: '127424441' },
   { id: 505, name: 'Player', img: '209564731' },
+  { id: 350, name: 'Apple TV+', img: '152862153'}
 ];
 
 const Providers = (props) => {
